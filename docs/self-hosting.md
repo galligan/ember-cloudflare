@@ -252,7 +252,7 @@ deploys shouldn't reach, such as another project's files, in a Cloudflare accoun
 ### A custom domain
 
 Ember answers at its workers.dev address until an administrator gives it one of your own, under
-Domain settings in Workspace settings, at the workers.dev address, and at any other with Move to another
+Domain settings in Community settings, at the workers.dev address, and at any other with Move to another
 domain. They type the address, `chat.example.com` say, and choose Set up, which first checks whether
 the address already reaches Ember, as one added to the Worker before does, and then offers just Save.
 Otherwise it asks Cloudflare's resolver for the zone the address is in, `example.com`, and whose
@@ -271,7 +271,7 @@ it, so the steps open the dashboard, copying what to paste there. With Cloudflar
    Ember remembers being opened at, where Add Domain takes it. Cloudflare makes the DNS record and the
    certificate.
 3. Use chat.example.com, which asks the address from the Worker for a one-time probe only this Ember
-   answers, makes it Ember's address once it does, and opens Workspace settings there. Until then it
+   answers, makes it Ember's address once it does, and opens Community settings there. Until then it
    says nothing answers there yet, or that something else does, so Ember is never sent to an address
    that doesn't reach it.
 
@@ -287,7 +287,7 @@ Moving to another domain takes the same steps, and Go back to the workers.dev ad
 Ember's address once more, once the Worker finds Ember still answers there. Either way, every other
 address sends people to Ember's, the domain it left included: that domain reaches Ember until it's
 removed on the Worker's Domains tab, which only the dashboard does. So Custom domain names the domains
-Ember moved away from, links to that tab, and checks each until it's gone. Workspace settings stay
+Ember moved away from, links to that tab, and checks each until it's gone. Community settings stay
 wherever they're opened, so if Ember's domain ever stops reaching it, open Domain settings at the
 workers.dev address and go back there. Deploys leave the domain alone as long as `wrangler.jsonc` lists no
 `routes`, and keep the workers.dev address on (`workers_dev`), for going back.
@@ -319,7 +319,7 @@ the address and its certificate active, Use chat.example.com makes it Ember's ad
 ### Who can join
 
 New people join with the join link until an administrator changes how under Who can join, in
-Workspace settings' Membership, where each way has a switch:
+Community settings' Membership, where each way has a switch:
 
 - Open, off until it's turned on, lets anyone create an account at `https://<Ember's address>/join`,
   which the sign-in page links to as Create an account. Nobody checks that an email address is the
@@ -374,7 +374,7 @@ Preview workflow passes repository secrets of the same names through.
 
 The members of a [Memberful](https://memberful.com) site can join and sign in with their Memberful
 accounts instead of passwords. It's off until an administrator turns it on under Memberful in
-Workspace settings, which walks them through it:
+Community settings, which walks them through it:
 
 1. In Memberful, under Settings, Custom applications, add an app with Include OAuth tokens with
    this application checked, choose Server-side, and give it the OAuth redirect URL
@@ -402,7 +402,7 @@ Workspace settings, which walks them through it:
    pnpm exec wrangler secret put MEMBERFUL_WEBHOOK_SECRET
    pnpm exec wrangler secret put MEMBERFUL_API_KEY
    ```
-4. Turn on Memberful in Workspace settings.
+4. Turn on Memberful in Community settings.
 
 While it's on, the sign-in page offers Member? Sign in with Memberful under its form. Someone with an
 active subscription, or the all access pass, signs in as the person their Memberful account is
@@ -443,7 +443,7 @@ they sign in. Making an open room private leaves them out of it, as it does anyo
 webhook only tells Ember whom to ask about: Memberful sends them in no particular order, so the
 Workspace asks Memberful's API what that member's membership is now, and asks about everyone linked
 once a day too, in case one never came. Administrators, and the people they invite, who need no
-membership, are never suspended. Administrators see suspended members dimmed in Workspace settings,
+membership, are never suspended. Administrators see suspended members dimmed in Community settings,
 where they can remove them, and everyone else sees them as removed. All of this goes on whether
 Memberful is on or not, since its members keep signing in with it once it's off.
 
@@ -451,7 +451,7 @@ Memberful is on or not, since its members keep signing in with it once it's off.
 
 Ember sends email with [Resend](https://resend.com), with an API key an administrator gives it, or
 with [Cloudflare Email Service](https://developers.cloudflare.com/email-service/), which wrangler.jsonc
-binds as `EMAIL`. Under Email, in Workspace settings' Membership, Set up email walks an administrator
+binds as `EMAIL`. Under Email, in Community settings' Membership, Set up email walks an administrator
 through either, then the From address Ember's email comes from, under the community's name unless it
 names another, and sends them a test email as it finishes, so that it checks itself. Turning
 on Email domain, or Invite by email's Set up email, opens it too while Ember can't send email. Stop
@@ -495,7 +495,7 @@ file.
 
 ### Inviting people by email
 
-Under Invite by email, in Workspace settings' Membership, an administrator gives the email addresses
+Under Invite by email, in Community settings' Membership, an administrator gives the email addresses
 of the people to invite, and Ember emails each a link that joins with that address, once, within 7
 days, whichever ways to join are on, Members only included. Until Ember can send email, the card
 makes the links for the administrator to copy and send. The invitations nobody has accepted are
