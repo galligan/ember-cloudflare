@@ -816,8 +816,8 @@ What a self-hoster should know, beyond keeping the setup password and link to th
   http URL elsewhere before gets no deliveries until its URL is changed, and the Worker's log says
   why.
 - Workers Logs record each request's address, which for Campfire's bot API and the Slack-compatible
-  webhooks holds the bot's key and for the join link its code; Reset key and Regenerate join link are
-  the remedies if a log is shared, and
+  webhooks holds the bot's key and for the join link its code; Generate a new key and Regenerate join
+  link are the remedies if a log is shared, and
   `"logs": { "invocation_logs": false }` under `observability` in `wrangler.jsonc` drops the
   per-request record.
 - A new password takes at least 8 characters, at setup, on joining, in a profile or in a reset,
